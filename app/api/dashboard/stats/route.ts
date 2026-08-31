@@ -2,7 +2,10 @@ import { NextRequest } from 'next/server';
 import { getUserClient, ok, fail } from '@/lib/api-utils';
 import type { DashboardStats, Expense } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
+
   const ctx = await getUserClient(req);
   if (!ctx) return fail('Unauthorized', 401);
   const { client, user } = ctx;
