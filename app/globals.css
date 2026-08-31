@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 158 64% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 47% 20%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 158 50% 95%;
+    --accent-foreground: 158 64% 20%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 158 64% 30%;
+    --chart-1: 158 64% 40%;
+    --chart-2: 200 70% 50%;
+    --chart-3: 43 74% 56%;
+    --chart-4: 280 60% 60%;
+    --chart-5: 340 70% 55%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 96%;
+    --card: 222 44% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 44% 11%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 158 60% 45%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 222 40% 16%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 40% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 40% 18%;
+    --accent-foreground: 158 60% 75%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 158 60% 45%;
+    --chart-1: 158 60% 50%;
+    --chart-2: 200 70% 55%;
+    --chart-3: 43 74% 60%;
+    --chart-4: 280 60% 65%;
+    --chart-5: 340 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+  }
+  .animate-in-fade {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
